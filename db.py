@@ -7,7 +7,9 @@ class Database:
         self.conn = sqlite3.connect(db)
         self.cur = self.conn.cursor()
         self.cur.execute(
-            "CREATE TABLE IF NOT EXISTS patients (id INTEGER PRIMARY KEY, name TEXT, birthDate DATE, livingPlace TEXT, sex TEXT)")
+            "CREATE TABLE IF NOT EXISTS patients" +
+            " (id INTEGER PRIMARY KEY, name TEXT," +
+            " birthDate DATE, livingPlace TEXT, sex TEXT)")
         self.conn.commit()
 
     def fetch(self):
@@ -26,7 +28,8 @@ class Database:
 
     def insert(self, data):
         self.cur.execute("INSERT INTO patients VALUES (NULL, ?, ?, ?, ?)",
-                         (data['name'], data['birthday'], data['livingPlace'], data['sex']))
+                         (data['name'], data['birthday'],
+                          data['livingPlace'], data['sex']))
         self.conn.commit()
 
     def delete(self, id):
