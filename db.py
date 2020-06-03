@@ -27,16 +27,22 @@ class Database:
             searchingName, name[1])) > 0, self.fetch()))
 
     def insert(self, data):
-        self.cur.execute("INSERT INTO patients VALUES (NULL, ?, ?, ?, ?)",
-                         (data['name'], data['birthday'],
-                          data['livingPlace'], data['sex']))
+        self.cur.execute("INSERT INTO patients VALUES (NULL, ?, ?, ?, ?)", (
+            data['name'], data['birthday'],
+            data['livingPlace'], data['sex']))
         self.conn.commit()
 
     def delete(self, id):
-        pass
+        self.cur.execute("DELETE FROM patients WHERE id = ?", (id,))
+        self.conn.commit()
 
     def update(self, id, data):
-        pass
+        self.cur.execute(
+            "UPDATE patients SET VALUES name = ?, birthday = ?, " +
+            "livingPlace= ?, sex= ? WHERE id= ?", (
+                data['name'], data['birthday'],
+                data['livingPlace'], data['sex'], id))
+        self.conn.commit()
 
     def __del__(self):
         self.conn.close()
