@@ -31,6 +31,7 @@ class MainView(tk.Frame):
         p1 = Page1(self)
         p2 = Page2(self)
         p3 = Page3(self)
+        p1.setCb(p2)
 
         # Buttons
         buttonframe = tk.Frame(self, bg='SlateGray1')

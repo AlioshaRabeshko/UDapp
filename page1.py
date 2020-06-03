@@ -8,6 +8,7 @@ class DialogBox():
     def __init__(self, dbObj):
         self.db = dbObj
         self.window = tk.Toplevel()
+        self.window.title('Добавити нового пацієнта')
         self.frame = tk.Frame(self.window)
         self.frame.pack(side='top', padx=10, pady=10, expand=1, anchor='nw')
 
@@ -49,14 +50,13 @@ class DialogBox():
                         value=1).grid(row=0, column=1, padx=2, pady=1)
 
     def cancelBtn(self):
-        print(self.myvar.get())
         self.window.destroy()
         self.window.update()
 
     def acceptBtn(self):
         if (len(self.newPatientName.get()) != 0 and
-            len(self.newPatientName.get()) != 0 and
-                len(self.newPatientName.get()) != 0):
+            len(self.newPatientDate.get()) != 0 and
+                len(self.newPatientPlace.get()) != 0):
             self.db.insert({
                 'name': self.newPatientName.get(),
                 'birthday': self.newPatientDate.get(),
@@ -80,30 +80,27 @@ class Page1(Page):
 
         self.db = Database('patients.db')
 
-        self.searchField()
-        self.buildList()
+        self.buildLeftBar()
         self.loadList()
-        self.printData()
+        self.printRightBar()
 
-    def searchField(self):
+    def buildLeftBar(self):
         self.patientName = tk.StringVar()
-        inputFrame = tk.Frame(self, bg='mint cream')
-        inputFrame.pack(side='top', padx=20, anchor='nw')
+        listFrame = tk.Frame(self, bg='mint cream', )
+
+        inputFrame = tk.Frame(listFrame, bg='mint cream')
+        inputFrame.pack(side='top', padx=5, pady=10, anchor='nw')
         tk.Label(inputFrame, text='ПІБ: ',
                  font='Times 15', bg='mint cream').pack(side='left')
         ttk.Entry(inputFrame, textvariable=self.patientName,
                   font='Times 15').pack(side='left')
-
-        # Search button
         s = ttk.Style()
         s.configure('my.TButton', font=('Times', 13))
         ttk.Button(inputFrame, text='  Пошук піцієнтів  ',
                    style='my.TButton',
                    command=self.fillList).pack(side='left', padx=5)
 
-    def buildList(self):
-        self.listFrame = tk.Frame(self, bg='mint cream', )
-        self.tree = ttk.Treeview(self.listFrame, height=90)
+        self.tree = ttk.Treeview(listFrame, height=90)
         self.tree['columns'] = ('one', 'two', 'three', 'four')
         self.tree.column('#0', width=270, minwidth=270, stretch=tk.NO)
         self.tree.column('one', width=145, minwidth=145, stretch=tk.NO)
@@ -113,32 +110,51 @@ class Page1(Page):
         self.tree.heading('#0', text='Ім\'я', anchor=tk.W)
         self.tree.heading('one', text='Дата народження', anchor=tk.W)
 
-        self.listFrame.pack(side='top', expand=1,
-                            anchor='nw', padx=10, pady=10)
-        self.tree.pack(side='left')
+        listFrame.pack(side='left', padx=10, pady=10)
+        self.tree.pack(side='top')
         self.tree.bind('<<TreeviewSelect>>', self.selected)
 
-    def printData(self):
+    def printRightBar(self):
         titles = ('ПІБ', 'Дата народження', 'Місце проживання', 'Стать')
         self.vars = (tk.StringVar(), tk.StringVar(),
                      tk.StringVar(), tk.StringVar(), tk.StringVar())
-        dataInfo = tk.Frame(self.listFrame, pady=10, padx=10)
-        dataInfo.pack(side='right', anchor='nw')
-        self.dataFrame = tk.Frame(dataInfo, bg='azure3')
-        self.dataFrame.pack(side='top', pady=10)
+        dataInfo = tk.Frame(self, pady=10, padx=10)
+        dataInfo.pack(side='left', anchor='nw')
+        dataFrame = tk.Frame(dataInfo, bg='azure3')
+        dataFrame.pack(side='top', pady=10)
         for i in range(0, 4):
-            tk.Label(self.dataFrame, text=str(titles[i]),
+            tk.Label(dataFrame, text=str(titles[i]),
                      font='Times 13 bold', bg='azure3').grid(
                          row=i, column=0, padx=10)
-            tk.Label(self.dataFrame, textvariable=self.vars[i],
+            tk.Label(dataFrame, textvariable=self.vars[i],
                      font='Times 13 italic', bg='azure3',
                      width=28).grid(row=i, column=1)
-        ttk.Button(self.dataFrame, text='  Новий пацієнт  ',
+        ttk.Button(dataFrame, text='  Новий пацієнт  ',
                    style='my.TButton',
-                   command=self.generateWindow).grid(row=6, column=0, pady=15)
-        ttk.Button(self.dataFrame, text='  Вибрати тип обстеження  ',
+                   command=self.generateWindow
+                   ).grid(row=6, columnspan=2, pady=15)
+
+        titles = ({'name': 'Дослідження 1', 'template': 'tmp1', 'id': 'Id'},
+                  {'name': 'Дослідження 2', 'template': 'tmp1', 'id': 'Id'},
+                  {'name': 'Дослідження 3', 'template': 'tmp1', 'id': 'Id'})
+        self.diags = (tk.StringVar(), tk.StringVar(),
+                      tk.StringVar(), tk.StringVar(), tk.StringVar())
+        tree = ttk.Treeview(dataInfo, height=13)
+        tree['columns'] = ('one', 'two')
+        tree.column('#0', width=420, stretch='no')
+        tree.column('one', width=0, stretch='no')
+        tree.column('two', width=0, stretch='no')
+        tree.heading('#0', text='Тип обстеження', anchor='w')
+        tree.pack(side='top')
+        for el in titles:
+            tree.insert('', 1, text=el['name'],
+                        values=(el['template'], el['id']))
+
+        btn = tk.Frame(dataInfo, bg='azure3')
+        btn.pack(side='top', pady=10)
+        ttk.Button(btn, text='  Продовжити  ',
                    style='my.TButton',
-                   command=self.generateWindow).grid(row=6, column=1)
+                   command=self.switchPage).grid(row=6, column=1)
 
     def loadList(self):
         for patient in self.db.fetch():
@@ -160,3 +176,9 @@ class Page1(Page):
 
     def generateWindow(self):
         DialogBox(self.db)
+
+    def setCb(self, pg):
+        self.pg = pg
+
+    def switchPage(self):
+        self.pg.lift()
