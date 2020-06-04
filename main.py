@@ -2,13 +2,7 @@ import tkinter as tk
 from tkinter import ttk, Canvas
 from page import Page
 from page1 import Page1
-
-
-class Page2(Page):
-    def __init__(self, *args, **kwargs):
-        Page.__init__(self, *args, **kwargs)
-        label = tk.Label(self, text="Сторінка 2", bg='azure2')
-        label.pack(side="top", fill="both", expand=True)
+from diagnosticInput import DiagnosticInput
 
 
 class Page3(Page):
@@ -29,7 +23,7 @@ class MainView(tk.Frame):
     def __init__(self, *args, **kwargs):
         tk.Frame.__init__(self, *args, **kwargs)
         p1 = Page1(self)
-        p2 = Page2(self)
+        p2 = DiagnosticInput(self)
         p3 = Page3(self)
         p1.setCb(p2)
 
