@@ -38,7 +38,7 @@ class Database:
 
     def update(self, id, data):
         self.cur.execute(
-            "UPDATE patients SET VALUES name = ?, birthday = ?, " +
+            "UPDATE patients SET name = ?, birthDate = ?, " +
             "livingPlace= ?, sex= ? WHERE id= ?", (
                 data['name'], data['birthday'],
                 data['livingPlace'], data['sex'], id))

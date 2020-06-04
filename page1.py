@@ -4,7 +4,7 @@ from page import Page
 from db import Database
 
 
-class DialogBox():
+class InputBox():
     def __init__(self, dbObj):
         self.db = dbObj
         self.window = tk.Toplevel()
@@ -61,6 +61,86 @@ class DialogBox():
                 'name': self.newPatientName.get(),
                 'birthday': self.newPatientDate.get(),
                 'livingPlace': self.newPatientPlace.get(),
+                'sex': self.getLetter()})
+            self.window.destroy()
+            self.window.update()
+
+    def getLetter(self):
+        if self.myvar.get() == 0:
+            return 'Ч'
+        return 'Ж'
+
+
+class EditBox():
+    def __init__(self, dbObj, data):
+        self.db = dbObj
+        self.data = data
+        self.window = tk.Toplevel()
+        self.window.title('Добавити нового пацієнта')
+        self.frame = tk.Frame(self.window)
+        self.frame.pack(side='top', padx=10, pady=10, expand=1, anchor='nw')
+
+        self.showEntry()
+        self.showRadBtn()
+
+        frameBtn = tk.Frame(self.window, height='10')
+        frameBtn.pack(side='bottom', padx=5, pady=2, expand=1, anchor='e')
+
+        ttk.Button(frameBtn, text='  Зберегти  ',
+                   style='my.TButton',
+                   command=self.acceptBtn).pack(side='right')
+        ttk.Button(frameBtn, text='  Видалити  ',
+                   style='my.TButton',
+                   command=self.deleteBtn).pack(side='right')
+        ttk.Button(frameBtn, text='  Відмінити  ',
+                   style='my.TButton',
+                   command=self.cancelBtn).pack(side='right')
+
+    def showEntry(self):
+        self.patientName = self.data[0]
+        self.patientDate = self.data[1]
+        self.patientPlace = self.data[2]
+        tk.Label(self.frame, text="ПІБ: ").grid(row=0, column=0)
+        ttk.Entry(self.frame, textvariable=self.patientName,
+                  font='Times 14', width='25').grid(row=0, column=1)
+        tk.Label(self.frame, text="Місце проживання: ").grid(row=1, column=0)
+        ttk.Entry(self.frame, textvariable=self.patientPlace,
+                  font='Times 14', width='25').grid(row=1, column=1)
+        tk.Label(self.frame, text="Дата народження: ").grid(row=2, column=0)
+        ttk.Entry(self.frame, textvariable=self.patientDate,
+                  font='Times 14', width='25').grid(row=2, column=1)
+        tk.Label(self.frame, text="Стать: ").grid(row=3, column=0)
+
+    def showRadBtn(self):
+        self.frameRad = tk.Frame(self.frame)
+        self.frameRad.grid(row=3, column=1)
+        self.myvar = tk.IntVar(self.frameRad)
+        if self.data[3].get() == 'Ч':
+            self.myvar.set(0)
+        elif self.data[3].get() == 'Ж':
+            self.myvar.set(1)
+        ttk.Radiobutton(self.frameRad, text='Чоловій', variable=self.myvar,
+                        value=0).grid(row=0, column=0, padx=2, pady=1)
+        ttk.Radiobutton(self.frameRad, text='Жінка', variable=self.myvar,
+                        value=1).grid(row=0, column=1, padx=2, pady=1)
+
+    def cancelBtn(self):
+        self.window.destroy()
+        self.window.update()
+
+    def deleteBtn(self):
+        self.db.delete(self.data[4].get())
+        self.window.destroy()
+        self.window.update()
+
+    def acceptBtn(self):
+        if (len(self.patientName.get()) != 0 and
+            len(self.patientDate.get()) != 0 and
+                len(self.patientPlace.get()) != 0):
+            self.db.update(self.data[4].get(), {
+                'name': self.patientName.get(),
+                'birthday': self.patientDate.get(),
+                'livingPlace': self.patientPlace.get(),
                 'sex': self.getLetter()})
             self.window.destroy()
             self.window.update()
@@ -129,10 +209,15 @@ class Page1(Page):
             tk.Label(dataFrame, textvariable=self.vars[i],
                      font='Times 13 italic', bg='azure3',
                      width=28).grid(row=i, column=1)
+        self.editBtn = ttk.Button(dataFrame, text='  Редагувати  ',
+                                  style='my.TButton',
+                                  command=self.generateEditWindow)
+        self.editBtn.grid(row=6, column=0)
+        self.editBtn.state(['disabled'])
         ttk.Button(dataFrame, text='  Новий пацієнт  ',
                    style='my.TButton',
-                   command=self.generateWindow
-                   ).grid(row=6, columnspan=2, pady=15)
+                   command=self.generateIputWindow
+                   ).grid(row=6, column=1, pady=15)
 
         titles = ({'name': 'Дослідження 1', 'template': 'tmp1', 'id': 'Id'},
                   {'name': 'Дослідження 2', 'template': 'tmp1', 'id': 'Id'},
@@ -168,14 +253,20 @@ class Page1(Page):
                 patient[2], patient[0], patient[3], patient[4]))
 
     def selected(self, smth):
+        self.editBtn.state(['!disabled'])
         self.vars[0].set(self.tree.item(self.tree.focus())['text'])
         self.vars[1].set(self.tree.item(self.tree.focus())['values'][0])
         self.vars[2].set(self.tree.item(self.tree.focus())['values'][2])
         self.vars[3].set(self.tree.item(self.tree.focus())['values'][3])
         self.vars[4].set(self.tree.item(self.tree.focus())['values'][1])
 
-    def generateWindow(self):
-        DialogBox(self.db)
+    def generateIputWindow(self):
+        InputBox(self.db)
+
+    def generateEditWindow(self):
+        if len(self.vars[0].get()) == 0:
+            return
+        EditBox(self.db, self.vars)
 
     def setCb(self, pg):
         self.pg = pg
