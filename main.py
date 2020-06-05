@@ -29,7 +29,7 @@ class MainView(tk.Frame):
 
         # Buttons
         buttonframe = tk.Frame(self, bg='SlateGray1')
-        buttonframe.pack(side="top", fill="x", expand=False)
+        # buttonframe.pack(side="top", fill="x", expand=False)
         b1 = ttk.Button(buttonframe, text="Page 1", command=p1.lift)
         b2 = ttk.Button(buttonframe, text="Page 2", command=p2.lift)
         b3 = ttk.Button(buttonframe, text="Page 3", command=p3.lift)

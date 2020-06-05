@@ -9,6 +9,8 @@ pylint = "*"
 [packages]
 pyinstaller = "*"
 flake8 = "*"
+docx = "*"
+docxtpl = "*"
 
 [requires]
 python_version = "3.8"

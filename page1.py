@@ -219,21 +219,20 @@ class Page1(Page):
                    command=self.generateIputWindow
                    ).grid(row=6, column=1, pady=15)
 
-        titles = ({'name': 'Дослідження 1', 'template': 'tmp1', 'id': 'Id'},
-                  {'name': 'Дослідження 2', 'template': 'tmp1', 'id': 'Id'},
-                  {'name': 'Дослідження 3', 'template': 'tmp1', 'id': 'Id'})
+        titles = ({'name': 'Дослідження серця', 'template': 'tmp1', 'id': 'Id'},
+                  {'name': '', 'template': '', 'id': ''})
         self.diags = (tk.StringVar(), tk.StringVar(),
                       tk.StringVar(), tk.StringVar(), tk.StringVar())
-        tree = ttk.Treeview(dataInfo, height=13)
-        tree['columns'] = ('one', 'two')
-        tree.column('#0', width=420, stretch='no')
-        tree.column('one', width=0, stretch='no')
-        tree.column('two', width=0, stretch='no')
-        tree.heading('#0', text='Тип обстеження', anchor='w')
-        tree.pack(side='top')
+        self.treeDiag = ttk.Treeview(dataInfo, height=13)
+        self.treeDiag['columns'] = ('one', 'two')
+        self.treeDiag.column('#0', width=420, stretch='no')
+        self.treeDiag.column('one', width=0, stretch='no')
+        self.treeDiag.column('two', width=0, stretch='no')
+        self.treeDiag.heading('#0', text='Тип обстеження', anchor='w')
+        self.treeDiag.pack(side='top')
         for el in titles:
-            tree.insert('', 1, text=el['name'],
-                        values=(el['template'], el['id']))
+            self.treeDiag.insert('', 1, text=el['name'],
+                                 values=(el['template'], el['id']))
 
         btn = tk.Frame(dataInfo, bg='azure3')
         btn.pack(side='top', pady=10)
@@ -273,3 +272,5 @@ class Page1(Page):
 
     def switchPage(self):
         self.pg.lift()
+        self.pg.setInfo(self.vars, self.treeDiag.item(
+            self.treeDiag.focus())['text'])
