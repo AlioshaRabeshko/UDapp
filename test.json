@@ -1,0 +1,117 @@
+{
+    "name": "Обстеження серця",
+    "rows": {
+        "1": {
+            "Порожнина": {
+                "ВТЛШ": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": ""
+                },
+                "КДР": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "см"
+                },
+                "КСР": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "см"
+                },
+                "КДО": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "мл"
+                },
+                "КСО": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "мл"
+                },
+                "УО": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "мл"
+                },
+                "ФВ": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "%"
+                },
+                "ЧСС": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": ""
+                },
+                "FS": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": ""
+                },
+                "Маса міокарду": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "г"
+                }
+            },
+            "Стінки": {
+                "ТМШП": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "см"
+                },
+                "ТМШП кінез": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": ""
+                },
+                "ТЗС": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": "см"
+                },
+                "ТЗС кінез": {
+                    "input": "entry",
+                    "type": "number",
+                    "afterValue": ""
+                },
+                "Наявність перикардіального випоту": {
+                    "input": "radianbox",
+                    "content": {
+                        "Ні": "",
+                        "Так": {
+                            "input": "entry",
+                            "type": "number",
+                            "afterValue": "см"
+                        }
+                    },
+                    "type": "string",
+                    "afterValue": ""
+                },
+                "Діастологічна дисфункція": {
+                    "input": "radianbox",
+                    "content": {
+                        "E": "",
+                        "A": ""
+                    },
+                    "type": "string",
+                    "afterValue": ""
+                },
+                "Атипова хорда": {
+                    "input": "radianbox",
+                    "content": {
+                        "Ні": "",
+                        "Так": {
+                            "input": "entry",
+                            "type": "number",
+                            "afterValue": "см"
+                        }
+                    },
+                    "type": "string",
+                    "afterValue": ""
+                }
+            }
+        },
+        "2": {}
+    }
+}

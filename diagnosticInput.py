@@ -5,6 +5,10 @@ from docxtpl import DocxTemplate
 import os
 
 
+# class FormConstructor:
+    # def __init__(self, diagName):
+
+
 class Page1(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
@@ -20,7 +24,7 @@ class Page1(Page):
         for i in range(24):
             self.var[i] = tk.StringVar()
         tk.Label(container1_1, font='Times 15', bg='azure3',
-                 text='Порожнина').grid(row=0, column=2)
+                 text='Порожнина').grid(row=0, column=2, columnspan=2)
 
         tk.Label(container1_1, font='Times 12', bg='azure3',
                  text=' ВТЛШ ').grid(row=1, column=0)
@@ -286,7 +290,8 @@ class Page1(Page):
         self.doc.save('final.docx')
         try:
             os.system('libreoffice6.4 ' + './final.docx')
-        except expression:
+        except expression as err:
+            print(err)
             os.startfile('./final.docx')
 
     def setInfo(self, patientData, diagData):
