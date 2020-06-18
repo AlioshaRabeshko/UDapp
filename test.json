@@ -6,7 +6,7 @@
                 "ВТЛШ": {
                     "input": "entry",
                     "type": "number",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "КДР": {
                     "input": "entry",
@@ -41,12 +41,12 @@
                 "ЧСС": {
                     "input": "entry",
                     "type": "number",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "FS": {
                     "input": "entry",
                     "type": "number",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "Маса міокарду": {
                     "input": "entry",
@@ -63,7 +63,7 @@
                 "ТМШП кінез": {
                     "input": "entry",
                     "type": "number",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "ТЗС": {
                     "input": "entry",
@@ -73,7 +73,7 @@
                 "ТЗС кінез": {
                     "input": "entry",
                     "type": "number",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "Наявність перикардіального випоту": {
                     "input": "radianbox",
@@ -86,7 +86,7 @@
                         }
                     },
                     "type": "string",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "Діастологічна дисфункція": {
                     "input": "radianbox",
@@ -95,7 +95,7 @@
                         "A": ""
                     },
                     "type": "string",
-                    "afterValue": ""
+                    "afterValue": "None"
                 },
                 "Атипова хорда": {
                     "input": "radianbox",
@@ -108,10 +108,134 @@
                         }
                     },
                     "type": "string",
-                    "afterValue": ""
+                    "afterValue": "None"
                 }
             }
         },
-        "2": {}
+        "2": {
+            "Мітральний клапан": {
+                "input": "dropbox",
+                "content": {
+                    "Норма": "None",
+                    "Паралельний рух": "None",
+                    "П-подібний рух": "None",
+                    "Помірний фіброз": "None",
+                    "Виражений фіброз": "None",
+                    "Різкий фіброз": "None",
+                    "Кальциноз": "None",
+                    "Вегетації": "None",
+                    "Пролапс": "None",
+                    "Зворотній потік": "None"
+                },
+                "type": "string"
+            },
+            "Правий шлуночок": {
+                "input": "dropbox",
+                "content": {
+                    "Нормальна порожнина": "None",
+                    "Збільшена порожнина": "None",
+                    "Нормальна стінка": "None",
+                    "Гіпертрофія": "None",
+                    "Скоротливість": "None"
+                },
+                "type": "string"
+            },
+            "Трикуспідальний клапан": {
+                "input": "dropbox",
+                "content": {
+                    "Норма": "None",
+                    "Фіброз": "None",
+                    "Зворотній потік": "None",
+                    "Градієн регуляції": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "mmHg"
+                    }
+                },
+                "type": "string"
+            }
+        },
+        "3": {
+            "Ліве передсердя": {
+                "input": "dropbox",
+                "content": {
+                    "Норма": "None",
+                    "Помірно збільшене": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "мм"
+                    },
+                    "Різко збільшене": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "мм"
+                    }
+                },
+                "type": "string"
+            },
+            "Праве передсердя": {
+                "input": "dropbox",
+                "content": {
+                    "Норма": "None",
+                    "Помірно збільшене": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "мм"
+                    },
+                    "Різко збільшене": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "мм"
+                    }
+                },
+                "type": "string"
+            }
+        },
+        "4": {
+            "Аорта, аортальний клапан": {
+                "input": "dropbox",
+                "content": {
+                    "Норма": "None",
+                    "Помірний фіброз": "None",
+                    "Виражений фіброз": "None",
+                    "Різкий фіброз": "None",
+                    "Кальциноз": "None",
+                    "Вегетації": "None",
+                    "Систологічне розкриття": "None",
+                    "Діаметер аорти": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "мм"
+                    },
+                    "Зворотній потік": "None",
+                    "": "None",
+                    "Градієнт тиску": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "mmHg"
+                    }
+                },
+                "type": "string"
+            },
+            "Клапан легенвої артерії": {
+                "input": "dropbox",
+                "content": {
+                    "Норма": "None",
+                    "Помірний фіброз": "None",
+                    "Виражений фіброз": "None",
+                    "Різкий фіброз": "None",
+                    "Не локується": "None",
+                    "Гіпертензія": "None",
+                    "Регургітація": "None",
+                    "Шв. кровотоку": "None",
+                    "Градієнт тиску": {
+                        "input": "entry",
+                        "type": "number",
+                        "afterValue": "mmHg"
+                    }
+                },
+                "type": "string"
+            }
+        }
     }
 }

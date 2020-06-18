@@ -11,6 +11,7 @@ pyinstaller = "*"
 flake8 = "*"
 docx = "*"
 docxtpl = "*"
+config = "*"
 
 [requires]
 python_version = "3.8"
