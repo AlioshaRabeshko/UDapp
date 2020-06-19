@@ -5,11 +5,6 @@ from docxtpl import DocxTemplate
 from datetime import date
 import io, os, sys, config
 
-
-# class FormConstructor:
-    # def __init__(self, diagName):
-
-
 class Page1(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
@@ -20,9 +15,14 @@ class Page1(Page):
 
         container1_1 = tk.Frame(container1, padx=5, pady=5, bg='azure3')
         container1_1.pack(side='left', padx=7)
-        self.var = [0]*24
-        for i in range(24):
+        def cb(id):
+            self.ver[id] = True
+
+        self.var = [None]*22
+        self.ver = [False]*22
+        for i in range(22):
             self.var[i] = tk.StringVar()
+            self.var[i].trace_add('write', lambda name, index, mode, id=i: cb(id))
         tk.Label(container1_1, font='Times 15', bg='azure3',
                  text='Порожнина').grid(row=0, column=2, columnspan=2)
 
@@ -212,9 +212,9 @@ class Page1(Page):
         valC3_2 = ['Норма', 'Помірно збільшене', 'Різко збільшене']
         self.combobox3_2 = ttk.Combobox(container3_2, values=valC3_2)
         self.combobox3_2.grid(row=1, column=0)
-        ttk.Entry(container3_1, font='Times 11', textvariable=self.var[19],
+        ttk.Entry(container3_2, font='Times 11', textvariable=self.var[19],
                   width=12).grid(row=1, column=2, padx=6)
-        tk.Label(container3_1, font='Times 11', bg='azure3',
+        tk.Label(container3_2, font='Times 11', bg='azure3',
                  text='см').grid(row=1, column=3)
 
         container4 = tk.Frame(self, padx=9)
@@ -232,7 +232,7 @@ class Page1(Page):
                    'Зворотній потік', 'Швидкість кровотоку', 'Градієнт тиску']
         self.combobox4_1 = ttk.Combobox(container4_1, values=valC4_1)
         self.combobox4_1.grid(row=1, column=0)
-        ttk.Entry(container4_1, font='Times 11', textvariable=self.var[19],
+        ttk.Entry(container4_1, font='Times 11', textvariable=self.var[20],
                   width=12).grid(row=1, column=2, padx=6)
         tk.Label(container4_1, font='Times 11', bg='azure3',
                  text='см').grid(row=1, column=3)
@@ -247,7 +247,7 @@ class Page1(Page):
                    'Регургітація', 'V-кровотоку', 'Градієнт тиску']
         self.combobox4_2 = ttk.Combobox(container4_2, values=valC4_2)
         self.combobox4_2.grid(row=1, column=0)
-        ttk.Entry(container4_2, font='Times 11', textvariable=self.var[19],
+        ttk.Entry(container4_2, font='Times 11', textvariable=self.var[21],
                   width=12).grid(row=1, column=2, padx=6)
         tk.Label(container4_2, font='Times 11', bg='azure3',
                  text='см').grid(row=1, column=3)
@@ -257,12 +257,21 @@ class Page1(Page):
 
         self.textArea = tk.Text(
             container5, font='Times 11', padx=3, width=120, height=5)
-        self.textArea.grid(row=0, column=0, columnspan=8)
+        self.textArea.pack(side='top')
 
-        ttk.Button(container5, text='  Продовжити  ', command=self.continueBtn,
-                   style='my.TButton').grid(row=1, column=7)
+        container6 = tk.Frame(container5)
+        container6.pack(side='top', fill='x', pady=5)
+        ttk.Button(container6, text='  Назад  ', style='my.TButton', command=self.backBtn).pack(side='left')
+        ttk.Button(container6, text='  Продовжити  ', style='my.TButton', command=self.continueBtn).pack(side='right')
 
     def continueBtn(self):
+        count = 0
+        for i in range(22):
+            if self.ver[i] == True:
+                count = count + 1
+        print(count)
+        if count != 22:
+            return
         doc = DocxTemplate('tmps/tmp.docx')
         context = {
             'diagnosticsName': self.diagData,
@@ -300,23 +309,32 @@ class Page1(Page):
         try:
             os.system('libreoffice6.4 ' + './final.docx')
             os.system('start ' + './final.docx')
-        except err:
-            print(err)
+        except Exception:
+            print(Exception)
 
-    def setInfo(self, patientData, diagData):
+    def setInfo(self, patientData, diagData, pg):
         self.patientData = patientData
         self.diagData = diagData
+        self.backPg = pg
+        
+    def backBtn(self):
+        self.backPg.lift()
 
 
 class Page2(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
-        label = tk.Label(self, text='Обстеження органів черевної порожнини з кольоровим картуванням', font='Times 11')
+        label = tk.Label(self, text='Обстеження органів черевної порожнини з кольоровим картуванням', font='Times 14')
         label.pack(side='top')
-        
+
+        def cb(id):
+            self.ver[id] = True
+
         self.var = [None]*29
+        self.ver = [False]*29
         for i in range(29):
             self.var[i] = tk.StringVar()
+            self.var[i].trace_add('write', lambda name, index, mode, id=i: cb(id))
 
         container1 = tk.Frame(self)
         container1.pack(side='top')
@@ -470,7 +488,7 @@ class Page2(Page):
         
         
         container4 = tk.Frame(self)
-        container4.pack(side='top', pady=2)
+        container4.pack(side='top')
 
         container4_1 = tk.Frame(container4, pady=1)
         container4_1.pack(side='top', fill='x')
@@ -520,16 +538,23 @@ class Page2(Page):
         container5.pack(side='top', pady=2)
 
         self.textArea = tk.Text(container5, font='Times 11', padx=3, width=120, height=5)
-        self.textArea.grid(row=0, column=0, columnspan=8)
+        self.textArea.pack(side='top')
 
-        ttk.Button(container5, text='  Продовжити  ',
-                   style='my.TButton', command=self.continueBtn).grid(row=1, column=7)
+        container6 = tk.Frame(container5)
+        container6.pack(side='top', fill='x', pady=5)
+        ttk.Button(container6, text='  Назад  ', style='my.TButton', command=self.backBtn).pack(side='left')
+        ttk.Button(container6, text='  Продовжити  ', style='my.TButton', command=self.continueBtn).pack(side='right')
 
     def continueBtn(self):
+        count = 0
+        for i in range(29):
+            if self.ver[i] == True:
+                count = count + 1
+        if count != 29:
+            return
         doc = DocxTemplate('tmps/tmp2.docx')
         cfg = config.Config('configs/config.cfg')
-        print(self.var[2].get() + self.var[3].get())
-        context = {
+        doc.render({
             'patientName': self.patientData[0].get(),
             'birthDate': self.patientData[1].get(),
             'visitDate': date.today(),
@@ -559,25 +584,22 @@ class Page2(Page):
             'sv': self.var[28].get(),
             'conclu': self.textArea.get(1.0, tk.END),
             'doctorName': cfg['doctorName']
-        }
-        doc.render(context)
+        })
         doc.save('final.docx')
         try:
             os.system('libreoffice6.4 ' + './final.docx')
             os.system('start ' + './final.docx')
-        except err:
-            print(err)
+        except Exception:
+            print(Exception)
 
-    def setInfo(self, patientData, diagData):
+    def setInfo(self, patientData, diagData, pg):
         self.patientData = patientData
         self.diagData = diagData
-        
+        self.backPg = pg
 
+    def backBtn(self):
+        self.backPg.lift()
         
-
-    def setInfo(self, patientData, diagData):
-        self.patientData = patientData
-        self.diagData = diagData
 
 class Page3(Page):
     def __init__(self, *args, **kwargs):
@@ -592,10 +614,6 @@ class Page3(Page):
 class DiagnosticInput(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs)
-        # label = tk.Label(
-            # self, text=' Ввід даних про обстеження ',
-            # font='Times 15', bg='mint cream')
-        # label.pack(side='top')
 
         self.config(bg='mint cream', padx=5, pady=5)
         self.p1 = Page1(self)
@@ -608,9 +626,15 @@ class DiagnosticInput(Page):
         self.p2.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
         self.p3.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
 
-        self.p2.show()
+        # self.p2.show()
 
-    def setInfo(self, userDate, diagData):
-        self.p1.setInfo(userDate, diagData)
-        self.p2.setInfo(userDate, diagData)
-        self.p3.setInfo(userDate, diagData)
+    def setInfo(self, userDate, diagData, pg):
+        if diagData[1][1] == 0:
+            self.p1.show()
+            self.p1.setInfo(userDate, diagData[0], pg)
+        elif diagData[1][1] == 1:
+            self.p2.show()
+            self.p2.setInfo(userDate, diagData[0], pg)
+        elif diagData[1][1] == 2:
+            self.p3.show()
+            self.p3.setInfo(userDate, diagData[0], pg)

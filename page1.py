@@ -219,8 +219,10 @@ class Page1(Page):
                    command=self.generateIputWindow
                    ).grid(row=6, column=1, pady=15)
 
-        titles = ({'name': 'Дослідження серця', 'template': 'tmp1', 'id': 'Id'},
-                  {'name': '', 'template': '', 'id': ''})
+        titles = (
+                    {'name': 'Ехокардіографічне обстеження', 'template': 'tmp', 'id': 0},
+                    {'name': 'Обстеження органів черевної порожнини', 'template': 'tmp2', 'id': 1}
+                )
         self.diags = (tk.StringVar(), tk.StringVar(),
                       tk.StringVar(), tk.StringVar(), tk.StringVar())
         self.treeDiag = ttk.Treeview(dataInfo, height=13)
@@ -271,6 +273,8 @@ class Page1(Page):
         self.pg = pg
 
     def switchPage(self):
-        self.pg.lift()
-        self.pg.setInfo(self.vars, self.treeDiag.item(
-            self.treeDiag.focus())['text'])
+        if self.treeDiag.focus() != '' and self.tree.focus() != '' :
+            self.pg.lift()
+            self.pg.setInfo(self.vars, [self.treeDiag.item(
+                self.treeDiag.focus())['text'], self.treeDiag.item(
+                self.treeDiag.focus())['values']], self)
