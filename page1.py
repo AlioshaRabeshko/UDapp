@@ -221,7 +221,8 @@ class Page1(Page):
 
         titles = (
                     {'name': 'Ехокардіографічне обстеження', 'template': 'tmp', 'id': 0},
-                    {'name': 'Обстеження органів черевної порожнини', 'template': 'tmp2', 'id': 1}
+                    {'name': 'Обстеження органів черевної порожнини', 'template': 'tmp2', 'id': 1},                    
+                    {'name': 'Обстеження органів сечовидільної системи', 'template': 'tmp3', 'id': 2}
                 )
         self.diags = (tk.StringVar(), tk.StringVar(),
                       tk.StringVar(), tk.StringVar(), tk.StringVar())
