@@ -7,12 +7,16 @@ verify_ssl = true
 pylint = "*"
 
 [packages]
-pyinstaller = "45.0.0"
 flake8 = "*"
 docx = "*"
 docxtpl = "*"
 config = "*"
 setuptools = "*"
+pyinstaller = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+build = "pyinstaller --onefile main.py --hidden-import=pkg_resources.py2_warn --windowed"
+dev = "python main.py"

@@ -29,16 +29,16 @@ class InputBox():
         self.newPatientName = tk.StringVar()
         self.newPatientDate = tk.StringVar()
         self.newPatientPlace = tk.StringVar()
-        tk.Label(self.frame, text="ПІБ: ").grid(row=0, column=0)
+        tk.Label(self.frame, text='ПІБ: ').grid(row=0, column=0)
         ttk.Entry(self.frame, textvariable=self.newPatientName,
                   font='Times 14', width='25').grid(row=0, column=1)
-        tk.Label(self.frame, text="Місце проживання: ").grid(row=1, column=0)
+        tk.Label(self.frame, text='Місце проживання: ').grid(row=1, column=0)
         ttk.Entry(self.frame, textvariable=self.newPatientPlace,
                   font='Times 14', width='25').grid(row=1, column=1)
-        tk.Label(self.frame, text="Дата народження: ").grid(row=2, column=0)
+        tk.Label(self.frame, text='Дата народження: ').grid(row=2, column=0)
         ttk.Entry(self.frame, textvariable=self.newPatientDate,
                   font='Times 14', width='25').grid(row=2, column=1)
-        tk.Label(self.frame, text="Стать: ").grid(row=3, column=0)
+        tk.Label(self.frame, text='Стать: ').grid(row=3, column=0)
 
     def showRadBtn(self):
         self.frameRad = tk.Frame(self.frame)
@@ -100,16 +100,16 @@ class EditBox():
         self.patientName = self.data[0]
         self.patientDate = self.data[1]
         self.patientPlace = self.data[2]
-        tk.Label(self.frame, text="ПІБ: ").grid(row=0, column=0)
+        tk.Label(self.frame, text='ПІБ: ').grid(row=0, column=0)
         ttk.Entry(self.frame, textvariable=self.patientName,
                   font='Times 14', width='25').grid(row=0, column=1)
-        tk.Label(self.frame, text="Місце проживання: ").grid(row=1, column=0)
+        tk.Label(self.frame, text='Місце проживання: ').grid(row=1, column=0)
         ttk.Entry(self.frame, textvariable=self.patientPlace,
                   font='Times 14', width='25').grid(row=1, column=1)
-        tk.Label(self.frame, text="Дата народження: ").grid(row=2, column=0)
+        tk.Label(self.frame, text='Дата народження: ').grid(row=2, column=0)
         ttk.Entry(self.frame, textvariable=self.patientDate,
                   font='Times 14', width='25').grid(row=2, column=1)
-        tk.Label(self.frame, text="Стать: ").grid(row=3, column=0)
+        tk.Label(self.frame, text='Стать: ').grid(row=3, column=0)
 
     def showRadBtn(self):
         self.frameRad = tk.Frame(self.frame)
@@ -160,18 +160,20 @@ class Page1(Page):
 
         self.db = Database('patients.db')
 
+        self.mainFrame = tk.Frame(self, bg='mint cream')
+        self.mainFrame.pack(side='top', fill='y', expand='true', pady=20)
+
         self.buildLeftBar()
         self.loadList()
         self.printRightBar()
 
     def buildLeftBar(self):
         self.patientName = tk.StringVar()
-        listFrame = tk.Frame(self, bg='mint cream', )
+        listFrame = tk.Frame(self.mainFrame, padx=10, pady=10)
 
-        inputFrame = tk.Frame(listFrame, bg='mint cream')
-        inputFrame.pack(side='top', padx=5, pady=10, anchor='nw')
-        tk.Label(inputFrame, text='ПІБ: ',
-                 font='Times 15', bg='mint cream').pack(side='left')
+        inputFrame = tk.Frame(listFrame)
+        inputFrame.pack(side='top', padx=5, pady=10)
+        tk.Label(inputFrame, text='ПІБ: ', font='Times 15').pack(side='left')
         ttk.Entry(inputFrame, textvariable=self.patientName,
                   font='Times 15').pack(side='left')
         s = ttk.Style()
@@ -179,27 +181,28 @@ class Page1(Page):
         ttk.Button(inputFrame, text='  Пошук піцієнтів  ',
                    style='my.TButton',
                    command=self.fillList).pack(side='left', padx=5)
-
-        self.tree = ttk.Treeview(listFrame, height=90)
+        style = ttk.Style()
+        style.configure('Treeview', font=('Times', 13))   
+        self.tree = ttk.Treeview(listFrame)
         self.tree['columns'] = ('one', 'two', 'three', 'four')
-        self.tree.column('#0', width=270, minwidth=270, stretch=tk.NO)
-        self.tree.column('one', width=145, minwidth=145, stretch=tk.NO)
-        self.tree.column('two', width=0, minwidth=0, stretch=tk.NO)
-        self.tree.column('three', width=0, minwidth=0, stretch=tk.NO)
-        self.tree.column('four', width=0, minwidth=0, stretch=tk.NO)
+        self.tree.column('#0', width=370, stretch=tk.NO)
+        self.tree.column('one', width=245, stretch=tk.NO)
+        self.tree.column('two', width=0, stretch=tk.NO)
+        self.tree.column('three', width=0, stretch=tk.NO)
+        self.tree.column('four', width=0, stretch=tk.NO)
         self.tree.heading('#0', text='Ім\'я', anchor=tk.W)
         self.tree.heading('one', text='Дата народження', anchor=tk.W)
 
-        listFrame.pack(side='left', padx=10, pady=10)
-        self.tree.pack(side='top')
+        listFrame.pack(side='left', padx=5, fill='y')
+        self.tree.pack(side='top', fill='y', expand='true')
         self.tree.bind('<<TreeviewSelect>>', self.selected)
 
     def printRightBar(self):
         titles = ('ПІБ', 'Дата народження', 'Місце проживання', 'Стать')
         self.vars = (tk.StringVar(), tk.StringVar(),
                      tk.StringVar(), tk.StringVar(), tk.StringVar())
-        dataInfo = tk.Frame(self, pady=10, padx=10)
-        dataInfo.pack(side='left', anchor='nw')
+        dataInfo = tk.Frame(self.mainFrame, pady=10, padx=10)
+        dataInfo.pack(side='left', padx=5, fill='y', expand='true')
         dataFrame = tk.Frame(dataInfo, bg='azure3')
         dataFrame.pack(side='top', pady=10)
         for i in range(0, 4):
@@ -220,7 +223,7 @@ class Page1(Page):
                    ).grid(row=6, column=1, pady=15)
 
         titles = (
-                    {'name': 'Ехокардіографічне обстеження', 'template': 'tmp', 'id': 0},
+                    # {'name': 'Ехокардіографічне обстеження', 'template': 'tmp', 'id': 0},
                     {'name': 'Обстеження органів черевної порожнини', 'template': 'tmp2', 'id': 1},                    
                     {'name': 'Обстеження органів сечовидільної системи', 'template': 'tmp3', 'id': 2}
                 )
@@ -232,7 +235,7 @@ class Page1(Page):
         self.treeDiag.column('one', width=0, stretch='no')
         self.treeDiag.column('two', width=0, stretch='no')
         self.treeDiag.heading('#0', text='Тип обстеження', anchor='w')
-        self.treeDiag.pack(side='top')
+        self.treeDiag.pack(side='top', expand='true', fill='y')
         for el in titles:
             self.treeDiag.insert('', 1, text=el['name'],
                                  values=(el['template'], el['id']))

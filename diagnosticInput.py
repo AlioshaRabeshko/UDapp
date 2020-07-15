@@ -26,65 +26,65 @@ class Page1(Page):
         tk.Label(container1_1, font='Times 15', bg='azure3',
                  text='Порожнина').grid(row=0, column=2, columnspan=2)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text=' ВТЛШ ').grid(row=1, column=0)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[0],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[0],
                   width=8).grid(row=1, column=1)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='КДР').grid(row=2, column=0)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[1],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[1],
                   width=8).grid(row=2, column=1)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text=' см').grid(row=2, column=2)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='КСР').grid(row=3, column=0)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[2],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[2],
                   width=8).grid(row=3, column=1)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text=' см').grid(row=3, column=2)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='КДО').grid(row=4, column=0)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[3],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[3],
                   width=8).grid(row=4, column=1)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text=' мл').grid(row=5, column=0)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[4],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[4],
                   width=8).grid(row=5, column=1)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text=' мл').grid(row=5, column=2)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='УО').grid(row=1, column=3)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[5],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[5],
                   width=8).grid(row=1, column=4)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='мл ').grid(row=1, column=5)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='ФВ').grid(row=2, column=3)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[6],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[6],
                   width=8).grid(row=2, column=4)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='%').grid(row=2, column=5)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='ЧСС').grid(row=3, column=3)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[7],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[7],
                   width=8).grid(row=3, column=4)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='FS').grid(row=4, column=3)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[8],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[8],
                   width=8).grid(row=4, column=4)
 
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='Маса \nміокарду ').grid(row=5, column=3)
-        ttk.Entry(container1_1, font='Times 12', textvariable=self.var[9],
+        ttk.Entry(container1_1, font='Times 14', textvariable=self.var[9],
                   width=8).grid(row=5, column=4)
-        tk.Label(container1_1, font='Times 12', bg='azure3',
+        tk.Label(container1_1, font='Times 14', bg='azure3',
                  text='см  ').grid(row=5, column=5)
 
         container1_2 = tk.Frame(container1, padx=15, pady=5, bg='azure3')
@@ -92,52 +92,52 @@ class Page1(Page):
         tk.Label(container1_2, font='Times 15', bg='azure3',
                  text='Стінки').grid(row=0, column=1)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='ТМШП').grid(row=1, column=0)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[10],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[10],
                   width=8).grid(row=1, column=1)
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='см').grid(row=1, column=2)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='Кінез').grid(row=2, column=0)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[11],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[11],
                   width=8).grid(row=2, column=1)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='ТЗС').grid(row=3, column=0)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[12],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[12],
                   width=8).grid(row=3, column=1)
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='см').grid(row=3, column=2)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='Кінез').grid(row=4, column=0)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[13],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[13],
                   width=8).grid(row=4, column=1)
         tk.Label(container1_2, font='Times 9', bg='azure3',
                  text='').grid(row=5, column=0)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='      Наявність перикардіального випоту'
                  ).grid(row=0, column=3, columnspan=5)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[14],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[14],
                   width=12).grid(row=1, column=3)
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='см').grid(row=1, column=4)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='Діастолічна дисфункція'
                  ).grid(row=2, column=3, columnspan=3)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[15],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[15],
                   width=12).grid(row=3, column=3)
 
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='    Атипова хорда', anchor='w'
                  ).grid(row=4, column=3, columnspan=1)
-        ttk.Entry(container1_2, font='Times 12', textvariable=self.var[16],
+        ttk.Entry(container1_2, font='Times 14', textvariable=self.var[16],
                   width=12).grid(row=5, column=3)
-        tk.Label(container1_2, font='Times 12', bg='azure3',
+        tk.Label(container1_2, font='Times 14', bg='azure3',
                  text='см').grid(row=5, column=4)
         tk.Label(container1_2, font='Times 9', bg='azure3',
                  text='').grid(row=6)
@@ -338,28 +338,28 @@ class Page2(Page):
 
         container1 = tk.Frame(self)
         container1.pack(side='top')
-        tk.Label(container1, text='Печінка', font='Times 13 bold', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1, text='Печінка', font='Times 15 bold', bg='azure3').pack(side='top', fill='x')
 
         container1_1 = tk.Frame(container1, pady=1)
         container1_1.pack(side='top', fill='x')
         container1_1_0 = tk.Frame(container1_1, padx=2, bg='azure3')
         container1_1_0.pack(side='left', fill='both')
-        tk.Label(container1_1_0, text='Розміри', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container1_1_0, text='Розміри', font='Times 14', bg='azure3').pack(side='top')
         container1_1_0_1 = tk.Frame(container1_1_0, pady=2, bg='azure3')
         container1_1_0_1.pack(side='top', pady=2, fill='both')
-        tk.Label(container1_1_0_1, text='Ліва доля:    ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_0_1, font='Times 12', textvariable=self.var[0], width=8).pack(side='left')
-        tk.Label(container1_1_0_1, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_0_1, text='Ліва доля:    ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_0_1, font='Times 14', textvariable=self.var[0], width=8).pack(side='left')
+        tk.Label(container1_1_0_1, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         container1_1_0_2 = tk.Frame(container1_1_0, pady=2, bg='azure3')
         container1_1_0_2.pack(side='top', pady=2, fill='both')
-        tk.Label(container1_1_0_2, text='Права доля: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_0_2, font='Times 12', textvariable=self.var[1], width=8).pack(side='left')
-        tk.Label(container1_1_0_2, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_0_2, text='Права доля: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_0_2, font='Times 14', textvariable=self.var[1], width=8).pack(side='left')
+        tk.Label(container1_1_0_2, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         container1_1_1 = tk.Frame(container1_1, padx=5, bg='azure3')
         container1_1_1.pack(side='left', padx=1, fill='both')
-        tk.Label(container1_1_1, text='Контури', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container1_1_1, text='Контури', font='Times 14', bg='azure3').pack(side='top')
         container1_1_1_1 = tk.Frame(container1_1_1, pady=5, bg='azure3')
         container1_1_1_1.pack(side='top', pady=2, fill='both')
         ttk.Radiobutton(container1_1_1_1, text='Чіткі', variable=self.var[2], value='Чіткі').grid(row=0, column=0, padx=5, pady=1)
@@ -369,20 +369,20 @@ class Page2(Page):
         
         container1_1_2 = tk.Frame(container1_1, pady=2, bg='azure3')
         container1_1_2.pack(side='left', fill='both')
-        tk.Label(container1_1_2, text='Краї', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container1_1_2, text='Краї', font='Times 14', bg='azure3').pack(side='top')
         ttk.Radiobutton(container1_1_2, text='Гострі', variable=self.var[4], value='Гострі').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container1_1_2, text='Заокруглені', variable=self.var[4], value='Заокруглені').pack(side='top', padx=10, pady=1)
 
         container1_1_3 = tk.Frame(container1_1, pady=2, bg='azure3')
         container1_1_3.pack(side='left', padx=1, fill='both')
-        tk.Label(container1_1_3, text='Ехоструктура', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container1_1_3, text='Ехоструктура', font='Times 14', bg='azure3').pack(side='top')
         ttk.Radiobutton(container1_1_3, text='Дрібнозерниста', variable=self.var[5], value='Дрібнозерниста').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container1_1_3, text='Однорідна', variable=self.var[5], value='Однорідна').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container1_1_3, text='Неоднорідна', variable=self.var[5], value='Неоднорідна').pack(side='top', padx=10, pady=1)
 
         container1_1_4 = tk.Frame(container1_1, pady=2, bg='azure3')
         container1_1_4.pack(side='left', fill='both')
-        tk.Label(container1_1_4, text='Ехогенність', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container1_1_4, text='Ехогенність', font='Times 14', bg='azure3').pack(side='top')
         ttk.Radiobutton(container1_1_4, text='Підвищена', variable=self.var[6], value='Підвищена').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container1_1_4, text='Знижена', variable=self.var[6], value='Знижена').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container1_1_4, text='Без змін', variable=self.var[6], value='Без змін').pack(side='top', padx=10, pady=1)
@@ -391,26 +391,26 @@ class Page2(Page):
         container1_1_5.pack(side='left', fill='both', padx=1)
         container1_1_5_1 = tk.Frame(container1_1_5, pady=4, padx=4, bg='azure3')
         container1_1_5_1.pack(side='top', fill='both')
-        tk.Label(container1_1_5_1, text='Ворітна вежа: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_5_1, font='Times 12', textvariable=self.var[7], width=4).pack(side='left')
-        tk.Label(container1_1_5_1, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_5_1, text='Ворітна вежа: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_5_1, font='Times 14', textvariable=self.var[7], width=4).pack(side='left')
+        tk.Label(container1_1_5_1, text=' мм', font='Times 14', bg='azure3').pack(side='left')
         container1_1_5_2 = tk.Frame(container1_1_5, pady=4, padx=4, bg='azure3')
         container1_1_5_2.pack(side='top', fill='both')
-        tk.Label(container1_1_5_2, text='НПВ:               ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_5_2, font='Times 12', textvariable=self.var[8], width=4).pack(side='left', padx=1)
-        tk.Label(container1_1_5_2, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_5_2, text='НПВ:               ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_5_2, font='Times 14', textvariable=self.var[8], width=4).pack(side='left', padx=1)
+        tk.Label(container1_1_5_2, text=' мм', font='Times 14', bg='azure3').pack(side='left')
         container1_1_5_2 = tk.Frame(container1_1_5, pady=4, padx=4, bg='azure3')
         container1_1_5_2.pack(side='top', fill='both')
-        tk.Label(container1_1_5_2, text='Холедох:         ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_5_2, font='Times 12', textvariable=self.var[9], width=4).pack(side='left')
-        tk.Label(container1_1_5_2, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_5_2, text='Холедох:         ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_5_2, font='Times 14', textvariable=self.var[9], width=4).pack(side='left')
+        tk.Label(container1_1_5_2, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         container2 = tk.Frame(self)
         container2.pack(side='top', pady=2)
         
         container2_2 = tk.Frame(container2, pady=1)
         container2_2.pack(side='top', fill='x')
-        tk.Label(container2_2, text='Жовчний міхур', font='Times 13 bold', bg='azure3', padx=10).pack(side='left', fill='both')
+        tk.Label(container2_2, text='Жовчний міхур', font='Times 15 bold', bg='azure3', padx=10).pack(side='left', fill='both')
         container2_2_1 = tk.Frame(container2_2, pady=2, bg='azure3')
         container2_2_1.pack(side='left', fill='both', padx=1)
         ttk.Radiobutton(container2_2_1, text='Визначається', variable=self.var[10], value='Визначається').pack(side='top', padx=15, pady=1)
@@ -420,14 +420,14 @@ class Page2(Page):
         container2_2_2.pack(side='left', fill='both')
         container2_2_2_1 = tk.Frame(container2_2_2, pady=2, bg='azure3')
         container2_2_2_1.pack(side='top', pady=2, fill='both')
-        tk.Label(container2_2_2_1, text='Розміри: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container2_2_2_1, font='Times 12', textvariable=self.var[11], width=8).pack(side='left', padx=1)
-        tk.Label(container2_2_2_1, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container2_2_2_1, text='Розміри: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container2_2_2_1, font='Times 14', textvariable=self.var[11], width=8).pack(side='left', padx=1)
+        tk.Label(container2_2_2_1, text=' мм', font='Times 14', bg='azure3').pack(side='left')
         container2_2_2_2 = tk.Frame(container2_2_2, pady=2, bg='azure3')
         container2_2_2_2.pack(side='top', pady=2, fill='both')
-        tk.Label(container2_2_2_2, text='Стінки:   ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container2_2_2_2, font='Times 12', textvariable=self.var[12], width=8).pack(side='left')
-        tk.Label(container2_2_2_2, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container2_2_2_2, text='Стінки:   ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container2_2_2_2, font='Times 14', textvariable=self.var[12], width=8).pack(side='left')
+        tk.Label(container2_2_2_2, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         
         container2_2_3 = tk.Frame(container2_2, padx=2, bg='azure3')
@@ -442,7 +442,7 @@ class Page2(Page):
 
         container3 = tk.Frame(self)
         container3.pack(side='top')
-        tk.Label(container3, text='Підшлункова залоза', font='Times 13 bold', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container3, text='Підшлункова залоза', font='Times 15 bold', bg='azure3').pack(side='top', fill='x')
 
         container3_2 = tk.Frame(container3, pady=1)
         container3_2.pack(side='top', fill='x')
@@ -460,31 +460,31 @@ class Page2(Page):
         container3_2_2.pack(side='left', fill='both', padx=1)
         container3_2_2_1 = tk.Frame(container3_2_2, padx=5, pady=5, bg='azure3')
         container3_2_2_1.pack(side='top', pady=2, fill='both')
-        tk.Label(container3_2_2_1, text='Розміри: ', font='Times 12', bg='azure3').pack(side='left', fill='x')
-        ttk.Entry(container3_2_2_1, font='Times 12', textvariable=self.var[17], width=4).pack(side='left', padx=1)
-        ttk.Entry(container3_2_2_1, font='Times 12', textvariable=self.var[18], width=4).pack(side='left', padx=1)
-        ttk.Entry(container3_2_2_1, font='Times 12', textvariable=self.var[19], width=4).pack(side='left', padx=1)
-        tk.Label(container3_2_2_1, text=' мм', font='Times 12', bg='azure3').pack(side='left', fill='x')
+        tk.Label(container3_2_2_1, text='Розміри: ', font='Times 14', bg='azure3').pack(side='left', fill='x')
+        ttk.Entry(container3_2_2_1, font='Times 14', textvariable=self.var[17], width=4).pack(side='left', padx=1)
+        ttk.Entry(container3_2_2_1, font='Times 14', textvariable=self.var[18], width=4).pack(side='left', padx=1)
+        ttk.Entry(container3_2_2_1, font='Times 14', textvariable=self.var[19], width=4).pack(side='left', padx=1)
+        tk.Label(container3_2_2_1, text=' мм', font='Times 14', bg='azure3').pack(side='left', fill='x')
         container3_2_2_2 = tk.Frame(container3_2_2, padx=5, pady=5, bg='azure3')
         container3_2_2_2.pack(side='top', pady=2, fill='both')
-        tk.Label(container3_2_2_2, text='Структура: ', font='Times 12', bg='azure3').pack(side='left', fill='x')
+        tk.Label(container3_2_2_2, text='Структура: ', font='Times 14', bg='azure3').pack(side='left', fill='x')
         ttk.Radiobutton(container3_2_2_2, text='Однорідна', variable=self.var[20], value='Однорідна').pack(side='left', padx=2, pady=1)
         ttk.Radiobutton(container3_2_2_2, text='Неднорідна', variable=self.var[20], value='Неднорідна').pack(side='left', pady=1)
 
         container3_2_3 = tk.Frame(container3_2, padx=2, bg='azure3')
         container3_2_3.pack(side='left', fill='both')
-        tk.Label(container3_2_3, text='Ехогенність', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container3_2_3, text='Ехогенність', font='Times 14', bg='azure3').pack(side='top', fill='x')
         ttk.Radiobutton(container3_2_3, text='Підвищена', variable=self.var[21], value='Підвищена').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container3_2_3, text='Знижена', variable=self.var[21], value='Знижена').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container3_2_3, text='Без змін', variable=self.var[21], value='Без змін').pack(side='top', padx=10, pady=1)
 
         container3_2_3 = tk.Frame(container3_2, padx=2, bg='azure3')
         container3_2_3.pack(side='left', fill='both', padx=1)
-        tk.Label(container3_2_3, text='Панкреатична протока', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container3_2_3, text='Панкреатична протока', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container3_2_3_1 = tk.Frame(container3_2_3, padx=5, pady=5, bg='azure3')
         container3_2_3_1.pack(side='top', pady=2, fill='both')
-        ttk.Entry(container3_2_3_1, font='Times 12', textvariable=self.var[22], width=8).pack(side='left', padx=1)
-        tk.Label(container3_2_3_1, text=' мм', font='Times 12', bg='azure3').pack(side='left', fill='x')
+        ttk.Entry(container3_2_3_1, font='Times 14', textvariable=self.var[22], width=8).pack(side='left', padx=1)
+        tk.Label(container3_2_3_1, text=' мм', font='Times 14', bg='azure3').pack(side='left', fill='x')
         
         
         container4 = tk.Frame(self)
@@ -492,19 +492,19 @@ class Page2(Page):
 
         container4_1 = tk.Frame(container4, pady=1)
         container4_1.pack(side='top', fill='x')
-        tk.Label(container4_1, text='Селезінка', font='Times 13 bold', bg='azure3', padx=10).pack(side='left', fill='both')
+        tk.Label(container4_1, text='Селезінка', font='Times 15 bold', bg='azure3', padx=10).pack(side='left', fill='both')
         
         container4_1_1 = tk.Frame(container4_1, padx=2, bg='azure3')
         container4_1_1.pack(side='left', fill='both', padx=1)
-        tk.Label(container4_1_1, text='Розміри', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container4_1_1, text='Розміри', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container4_1_1_1 = tk.Frame(container4_1_1, padx=5, pady=5, bg='azure3')
         container4_1_1_1.pack(side='top', pady=2, fill='both')
-        ttk.Entry(container4_1_1_1, font='Times 12', textvariable=self.var[23], width=8).pack(side='left', padx=1)
-        tk.Label(container4_1_1_1, text=' мм', font='Times 12', bg='azure3').pack(side='left', fill='x')
+        ttk.Entry(container4_1_1_1, font='Times 14', textvariable=self.var[23], width=8).pack(side='left', padx=1)
+        tk.Label(container4_1_1_1, text=' мм', font='Times 14', bg='azure3').pack(side='left', fill='x')
 
         container4_1_2 = tk.Frame(container4_1, padx=2, bg='azure3')
         container4_1_2.pack(side='left', fill='both')
-        tk.Label(container4_1_2, text='Контури', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container4_1_2, text='Контури', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container4_1_2_1 = tk.Frame(container4_1_2, padx=5, pady=5, bg='azure3')
         container4_1_2_1.pack(side='top', pady=2, fill='both')
         ttk.Radiobutton(container4_1_2_1, text='Чіткі', variable=self.var[24], value='Чіткі').grid(row=0, column=0, padx=5, pady=1)
@@ -514,30 +514,30 @@ class Page2(Page):
 
         container4_1_3 = tk.Frame(container4_1, pady=2, bg='azure3')
         container4_1_3.pack(side='left', padx=1, fill='both')
-        tk.Label(container4_1_3, text='Ехоструктура', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container4_1_3, text='Ехоструктура', font='Times 14', bg='azure3').pack(side='top')
         ttk.Radiobutton(container4_1_3, text='Дрібнозерниста', variable=self.var[26], value='Дрібнозерниста').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container4_1_3, text='Однорідна', variable=self.var[26], value='Однорідна').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container4_1_3, text='Неоднорідна', variable=self.var[26], value='Неоднорідна').pack(side='top', padx=10, pady=1)
 
         container4_1_4 = tk.Frame(container4_1, pady=2, bg='azure3')
         container4_1_4.pack(side='left', fill='both')
-        tk.Label(container4_1_4, text='Ехогенність', font='Times 12', bg='azure3').pack(side='top')
+        tk.Label(container4_1_4, text='Ехогенність', font='Times 14', bg='azure3').pack(side='top')
         ttk.Radiobutton(container4_1_4, text='Підвищена', variable=self.var[27], value='Підвищена').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container4_1_4, text='Знижена', variable=self.var[27], value='Знижена').pack(side='top', padx=10, pady=1)
         ttk.Radiobutton(container4_1_4, text='Без змін', variable=self.var[27], value='Без змін').pack(side='top', padx=10, pady=1)
 
         container4_1_5 = tk.Frame(container4_1, padx=2, bg='azure3')
         container4_1_5.pack(side='left', fill='both', padx=1)
-        tk.Label(container4_1_5, text='Селезінкова вежа у\nворотах селезінки', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container4_1_5, text='Селезінкова вежа у\nворотах селезінки', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container4_1_5_1 = tk.Frame(container4_1_5, padx=5, pady=5, bg='azure3')
         container4_1_5_1.pack(side='top', pady=2, fill='both')
-        ttk.Entry(container4_1_5_1, font='Times 12', textvariable=self.var[28], width=8).pack(side='left', padx=1)
-        tk.Label(container4_1_5_1, text=' мм', font='Times 12', bg='azure3').pack(side='left', fill='x')
+        ttk.Entry(container4_1_5_1, font='Times 14', textvariable=self.var[28], width=8).pack(side='left', padx=1)
+        tk.Label(container4_1_5_1, text=' мм', font='Times 14', bg='azure3').pack(side='left', fill='x')
 
         container5 = tk.Frame(self, padx=9)
         container5.pack(side='top', pady=2)
 
-        self.textArea = tk.Text(container5, font='Times 11', padx=3, width=120, height=5)
+        self.textArea = tk.Text(container5, font='Times 11', padx=3, width=140, height=5)
         self.textArea.pack(side='top')
 
         container6 = tk.Frame(container5)
@@ -598,6 +598,9 @@ class Page2(Page):
         self.backPg = pg
 
     def backBtn(self):
+        for i in range(29):
+            self.ver[i] = False
+            self.var[i] = None
         self.backPg.lift()
         
 
@@ -621,12 +624,14 @@ class Page3(Page):
 
         container1_1 = tk.Frame(container1, pady=1)
         container1_1.pack(side='left', fill='y')
-        tk.Label(container1_1, text='Ліва нирка', font='Times 13 bold', bg='azure3').pack(side='top', fill='x', pady=2)
+        tk.Label(container1_1, text='Ліва нирка', font='Times 14 bold', bg='azure3').pack(side='top', fill='x', pady=2)
         
+        s = ttk.Style()
+        s.configure('TRadiobutton', font=('Times', 13))
         
         container1_1_0 = tk.Frame(container1_1, pady=1)
         container1_1_0.pack(side='left', fill='both')
-        tk.Label(container1_1_0, text='Розміщена', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_1_0, text='Розміщена', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_1_1 = tk.Frame(container1_1_0, padx=5, pady=1, bg='azure3')
         container1_1_1.pack(side='top', fill='both')
         ttk.Radiobutton(container1_1_1, text='Типово', variable=self.var[0], value='Типово').grid(row=0, column=0, padx=5, pady=1)
@@ -636,21 +641,21 @@ class Page3(Page):
 
         container1_1_2 = tk.Frame(container1_1_0, padx=5, pady=5, bg='azure3')
         container1_1_2.pack(side='top', pady=1, fill='both')
-        tk.Label(container1_1_2, text='Розміри: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_2, font='Times 12', textvariable=self.var[1], width=4).pack(side='left')
-        tk.Label(container1_1_2, text='x', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_2, font='Times 12', textvariable=self.var[2], width=4).pack(side='left')
-        tk.Label(container1_1_2, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_2, text='Розміри: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_2, font='Times 14', textvariable=self.var[1], width=4).pack(side='left')
+        tk.Label(container1_1_2, text='x', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_2, font='Times 14', textvariable=self.var[2], width=4).pack(side='left')
+        tk.Label(container1_1_2, text=' мм', font='Times 14', bg='azure3').pack(side='left')
         
         container1_1_3 = tk.Frame(container1_1_0, padx=5, pady=5, bg='azure3')
         container1_1_3.pack(side='top', fill='both')
-        tk.Label(container1_1_3, text='Паренхіма: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_1_3, font='Times 12', textvariable=self.var[3], width=4).pack(side='left')
-        tk.Label(container1_1_3, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_1_3, text='Паренхіма: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_3, font='Times 14', textvariable=self.var[3], width=4).pack(side='left')
+        tk.Label(container1_1_3, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         container1_1_4_0 = tk.Frame(container1_1_0, padx=5, pady=1, bg='azure3')
         container1_1_4_0.pack(side='top', fill='both', pady=1)
-        tk.Label(container1_1_4_0, text='Контури', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_1_4_0, text='Контури', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_1_4 = tk.Frame(container1_1_4_0, padx=5, pady=1, bg='azure3')
         container1_1_4.pack(side='top')
         ttk.Radiobutton(container1_1_4, text='Чіткі', variable=self.var[4], value='Чіткі').grid(row=0, column=0, padx=5, pady=1)
@@ -660,7 +665,7 @@ class Page3(Page):
 
         container1_1_5_0 = tk.Frame(container1_1_0, padx=5, pady=1, bg='azure3')
         container1_1_5_0.pack(side='top', fill='both')
-        tk.Label(container1_1_5_0, text='Шари диференціюються', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_1_5_0, text='Шари диференціюються', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_1_5 = tk.Frame(container1_1_5_0, padx=5, pady=1, bg='azure3')
         container1_1_5.pack(side='top')
         ttk.Radiobutton(container1_1_5, text='Чітко', variable=self.var[6], value='Чітко').grid(row=0, column=0, padx=5, pady=1)
@@ -669,20 +674,20 @@ class Page3(Page):
         container1_1_2_0 = tk.Frame(container1_1, pady=1, bg='azure3')
         container1_1_2_0.pack(side='left', fill='both', padx=1, pady=1)
         
-        tk.Label(container1_1_2_0, text='Співвідношення паренхіми\n до ЧМС', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_1_2_0, text='Співвідношення паренхіми\n до ЧМС', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_1_2_2 = tk.Frame(container1_1_2_0, pady=1, padx=5, bg='azure3')
         container1_1_2_2.pack(side='top', fill='both')
         ttk.Radiobutton(container1_1_2_2, text='2:1', variable=self.var[7], value='2:1').grid(row=0, column=0, padx=5, pady=1)
         ttk.Radiobutton(container1_1_2_2, text='3:1', variable=self.var[7], value='3:1').grid(row=0, column=1, padx=5, pady=1)
         ttk.Radiobutton(container1_1_2_2, text='1:1', variable=self.var[7], value='1:1').grid(row=0, column=3, padx=5, pady=1)
         
-        tk.Label(container1_1_2_0, text='ЧМК ущільнений за \nрахунок дрібних \nnехорозитивних структур \nрозміром до:', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_1_2_0, text='ЧМК ущільнений за рахунок \nдрібних nехорозитивних \nструктур розміром до:', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_1_2_3 = tk.Frame(container1_1_2_0, pady=1, padx=5, bg='azure3')
         container1_1_2_3.pack()
-        ttk.Entry(container1_1_2_3, font='Times 12', textvariable=self.var[8], width=8).pack(side='left')
-        tk.Label(container1_1_2_3, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        ttk.Entry(container1_1_2_3, font='Times 14', textvariable=self.var[8], width=8).pack(side='left')
+        tk.Label(container1_1_2_3, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
-        tk.Label(container1_1_2_0, text='Конкременти', font='Times 12', bg='azure3').pack(side='top', fill='x', pady=7)
+        tk.Label(container1_1_2_0, text='Конкременти', font='Times 14', bg='azure3').pack(side='top', fill='x', pady=7)
         container1_1_2_4 = tk.Frame(container1_1_2_0, pady=1, padx=5, bg='azure3')
         container1_1_2_4.pack(side='top', fill='x')
         ttk.Radiobutton(container1_1_2_4, text='Виявлено', variable=self.var[9], value='Виявлено').grid(row=0, column=0, padx=5, pady=1)
@@ -691,11 +696,11 @@ class Page3(Page):
 
         container1_2 = tk.Frame(container1, pady=1)
         container1_2.pack(side='left', fill='y', padx=5)
-        tk.Label(container1_2, text='Права нирка', font='Times 13 bold', bg='azure3').pack(side='top', fill='x', pady=2)
+        tk.Label(container1_2, text='Права нирка', font='Times 14 bold', bg='azure3').pack(side='top', fill='x', pady=2)
         
         container1_2_0 = tk.Frame(container1_2, pady=1)
         container1_2_0.pack(side='left', fill='both')
-        tk.Label(container1_2_0, text='Розміщена', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_2_0, text='Розміщена', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_2_1 = tk.Frame(container1_2_0, padx=5, pady=1, bg='azure3')
         container1_2_1.pack(side='top', fill='both')
         ttk.Radiobutton(container1_2_1, text='Типово', variable=self.var[10], value='Типово').grid(row=0, column=0, padx=5, pady=1)
@@ -705,21 +710,21 @@ class Page3(Page):
 
         container1_2_2 = tk.Frame(container1_2_0, padx=5, pady=5, bg='azure3')
         container1_2_2.pack(side='top', pady=1, fill='both')
-        tk.Label(container1_2_2, text='Розміри: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_2_2, font='Times 12', textvariable=self.var[11], width=4).pack(side='left')
-        tk.Label(container1_2_2, text='x', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_2_2, font='Times 12', textvariable=self.var[12], width=4).pack(side='left')
-        tk.Label(container1_2_2, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_2_2, text='Розміри: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_2_2, font='Times 14', textvariable=self.var[11], width=4).pack(side='left')
+        tk.Label(container1_2_2, text='x', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_2_2, font='Times 14', textvariable=self.var[12], width=4).pack(side='left')
+        tk.Label(container1_2_2, text=' мм', font='Times 14', bg='azure3').pack(side='left')
         
         container1_2_3 = tk.Frame(container1_2_0, padx=5, pady=5, bg='azure3')
         container1_2_3.pack(side='top', fill='both')
-        tk.Label(container1_2_3, text='Паренхіма: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container1_2_3, font='Times 12', textvariable=self.var[13], width=4).pack(side='left')
-        tk.Label(container1_2_3, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container1_2_3, text='Паренхіма: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container1_2_3, font='Times 14', textvariable=self.var[13], width=4).pack(side='left')
+        tk.Label(container1_2_3, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         container1_2_4_0 = tk.Frame(container1_2_0, padx=5, pady=1, bg='azure3')
         container1_2_4_0.pack(side='top', fill='both', pady=1)
-        tk.Label(container1_2_4_0, text='Контури', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_2_4_0, text='Контури', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_2_4 = tk.Frame(container1_2_4_0, padx=5, pady=1, bg='azure3')
         container1_2_4.pack(side='top')
         ttk.Radiobutton(container1_2_4, text='Чіткі', variable=self.var[14], value='Чіткі').grid(row=0, column=0, padx=5, pady=1)
@@ -729,7 +734,7 @@ class Page3(Page):
 
         container1_2_5_0 = tk.Frame(container1_2_0, padx=5, pady=1, bg='azure3')
         container1_2_5_0.pack(side='top', fill='both')
-        tk.Label(container1_2_5_0, text='Шари диференціюються', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_2_5_0, text='Шари диференціюються', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_2_5 = tk.Frame(container1_2_5_0, padx=5, pady=1, bg='azure3')
         container1_2_5.pack(side='top')
         ttk.Radiobutton(container1_2_5, text='Чітко', variable=self.var[16], value='Чітко').grid(row=0, column=0, padx=5, pady=1)
@@ -738,21 +743,21 @@ class Page3(Page):
         container1_2_2_0 = tk.Frame(container1_2, pady=1, bg='azure3')
         container1_2_2_0.pack(side='left', fill='both', padx=1, pady=1)
         
-        tk.Label(container1_2_2_0, text='Співвідношення паренхіми\n до ЧМС', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_2_2_0, text='Співвідношення паренхіми\n до ЧМС', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_2_2_2 = tk.Frame(container1_2_2_0, pady=1, padx=5, bg='azure3')
         container1_2_2_2.pack(side='top', fill='both')
         ttk.Radiobutton(container1_2_2_2, text='2:1', variable=self.var[17], value='2:1').grid(row=0, column=0, padx=5, pady=1)
         ttk.Radiobutton(container1_2_2_2, text='3:1', variable=self.var[17], value='3:1').grid(row=0, column=1, padx=5, pady=1)
         ttk.Radiobutton(container1_2_2_2, text='1:1', variable=self.var[17], value='1:1').grid(row=0, column=3, padx=5, pady=1)
         
-        tk.Label(container1_2_2_0, text='ЧМК ущільнений за \nрахунок дрібних \nnехорозитивних структур \nрозміром до:', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container1_2_2_0, text='ЧМК ущільнений за \nрахунок дрібних \nnехорозитивних структур \nрозміром до:', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container1_2_2_3 = tk.Frame(container1_2_2_0, pady=1, padx=5, bg='azure3')
         container1_2_2_3.pack()
-        ttk.Entry(container1_2_2_3, font='Times 12', textvariable=self.var[18], width=8).pack(side='left')
-        tk.Label(container1_2_2_3, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        ttk.Entry(container1_2_2_3, font='Times 14', textvariable=self.var[18], width=8).pack(side='left')
+        tk.Label(container1_2_2_3, text=' мм', font='Times 14', bg='azure3').pack(side='left')
 
         
-        tk.Label(container1_2_2_0, text='Конкременти', font='Times 12', bg='azure3').pack(side='top', fill='x', pady=7)
+        tk.Label(container1_2_2_0, text='Конкременти', font='Times 14', bg='azure3').pack(side='top', fill='x', pady=7)
         container1_2_2_4 = tk.Frame(container1_2_2_0, pady=1, padx=5, bg='azure3')
         container1_2_2_4.pack(side='top', fill='x')
         ttk.Radiobutton(container1_2_2_4, text='Виявлено', variable=self.var[19], value='Виявлено').grid(row=0, column=0, padx=5, pady=1)
@@ -764,7 +769,7 @@ class Page3(Page):
 
         container2_1 = tk.Frame(container2, pady=1)
         container2_1.pack(side='top', fill='y')
-        tk.Label(container2_1, text='Сечовий міхур', font='Times 13 bold', bg='azure3').pack(side='top', fill='x', pady=2)
+        tk.Label(container2_1, text='Сечовий міхур', font='Times 14 bold', bg='azure3').pack(side='top', fill='x', pady=2)
         
         container2_1_1 = tk.Frame(container2_1, pady=8, bg='azure3', padx=12)
         container2_1_1.pack(side='left', fill='y')
@@ -775,19 +780,19 @@ class Page3(Page):
         container2_1_2.pack(side='left', fill='y', padx=1)
         container2_1_2_1 = tk.Frame(container2_1_2, pady=3, bg='azure3')
         container2_1_2_1.pack(side='top', fill='y', padx=1)
-        tk.Label(container2_1_2_1, text='V:      ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container2_1_2_1, font='Times 12', textvariable=self.var[21], width=4).pack(side='left')
-        tk.Label(container2_1_2_1, text=' см^3', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container2_1_2_1, text='V:      ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container2_1_2_1, font='Times 14', textvariable=self.var[21], width=4).pack(side='left')
+        tk.Label(container2_1_2_1, text=' см^3', font='Times 14', bg='azure3').pack(side='left')
         container2_1_2_2 = tk.Frame(container2_1_2, pady=3, bg='azure3')
         container2_1_2_2.pack(side='top', fill='y', padx=1)
-        tk.Label(container2_1_2_2, text='Vзал: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container2_1_2_2, font='Times 12', textvariable=self.var[22], width=4).pack(side='left')
-        tk.Label(container2_1_2_2, text=' см^3', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container2_1_2_2, text='Vзал: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container2_1_2_2, font='Times 14', textvariable=self.var[22], width=4).pack(side='left')
+        tk.Label(container2_1_2_2, text=' см^3', font='Times 14', bg='azure3').pack(side='left')
 
         
         container2_1_3 = tk.Frame(container2_1, padx=5, pady=1, bg='azure3')
         container2_1_3.pack(side='left', fill='both')   
-        tk.Label(container2_1_3, text='Контури', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container2_1_3, text='Контури', font='Times 14', bg='azure3').pack(side='top', fill='x')
         container2_1_3_1 = tk.Frame(container2_1_3, padx=5, pady=1, bg='azure3')
         container2_1_3_1.pack(side='top', fill='x')
         ttk.Radiobutton(container2_1_3_1, text='Чіткі', variable=self.var[23], value='Чіткі').grid(row=1, column=0, padx=5, pady=1)
@@ -797,19 +802,19 @@ class Page3(Page):
         
         container2_1_4 = tk.Frame(container2_1, padx=5, bg='azure3')
         container2_1_4.pack(side='left', fill='both', padx=1)   
-        tk.Label(container2_1_4, text='Вміст', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container2_1_4, text='Вміст', font='Times 14', bg='azure3').pack(side='top', fill='x')
         ttk.Radiobutton(container2_1_4, text='Однорідний', variable=self.var[25], value='Однорідний').pack(side='top', fill='x')
         ttk.Radiobutton(container2_1_4, text='Неоднорідний', variable=self.var[25], value='Неоднорідний').pack(side='top', fill='x')
         
         container2_1_5 = tk.Frame(container2_1, padx=5, bg='azure3')
         container2_1_5.pack(side='left', fill='both')
-        tk.Label(container2_1_5, text='Стінки: ', font='Times 12', bg='azure3').pack(side='left')
-        ttk.Entry(container2_1_5, font='Times 12', textvariable=self.var[26], width=4).pack(side='left')
-        tk.Label(container2_1_5, text=' мм', font='Times 12', bg='azure3').pack(side='left')
+        tk.Label(container2_1_5, text='Стінки: ', font='Times 14', bg='azure3').pack(side='left')
+        ttk.Entry(container2_1_5, font='Times 14', textvariable=self.var[26], width=4).pack(side='left')
+        tk.Label(container2_1_5, text=' мм', font='Times 14', bg='azure3').pack(side='left')
         
         container2_1_6 = tk.Frame(container2_1, padx=5, bg='azure3')
         container2_1_6.pack(side='left', fill='both', padx=1)   
-        tk.Label(container2_1_6, text='Сечоводи', font='Times 12', bg='azure3').pack(side='top', fill='x')
+        tk.Label(container2_1_6, text='Сечоводи', font='Times 14', bg='azure3').pack(side='top', fill='x')
         ttk.Radiobutton(container2_1_6, text='Нерозширені', variable=self.var[27], value='Нерозширені').pack(side='top', fill='x', pady=2)
         ttk.Radiobutton(container2_1_6, text='Розширені', variable=self.var[27], value='Розширені').pack(side='top', fill='x')
 
@@ -817,7 +822,7 @@ class Page3(Page):
         container5 = tk.Frame(self, padx=9)
         container5.pack(side='top', pady=2)
 
-        self.textArea = tk.Text(container5, font='Times 11', padx=3, width=120, height=5)
+        self.textArea = tk.Text(container5, font='Times 11', padx=3, width=140, height=5)
         self.textArea.pack(side='top')
 
         container6 = tk.Frame(container5)
@@ -881,6 +886,9 @@ class Page3(Page):
         self.backPg = pg
 
     def backBtn(self):
+        for i in range(28):
+            self.ver[i] = False
+            self.var[i] = None
         self.backPg.lift()
 
 class DiagnosticInput(Page):
