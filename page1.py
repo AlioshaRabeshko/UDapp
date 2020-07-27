@@ -182,7 +182,7 @@ class Page1(Page):
                    style='my.TButton',
                    command=self.fillList).pack(side='left', padx=5)
         style = ttk.Style()
-        style.configure('Treeview', font=('Times', 13))   
+        style.configure('Treeview', font=('Times', 13))
         self.tree = ttk.Treeview(listFrame)
         self.tree['columns'] = ('one', 'two', 'three', 'four')
         self.tree.column('#0', width=370, stretch=tk.NO)
@@ -223,10 +223,13 @@ class Page1(Page):
                    ).grid(row=6, column=1, pady=15)
 
         titles = (
-                    # {'name': 'Ехокардіографічне обстеження', 'template': 'tmp', 'id': 0},
-                    {'name': 'Обстеження органів черевної порожнини', 'template': 'tmp2', 'id': 1},                    
-                    {'name': 'Обстеження органів сечовидільної системи', 'template': 'tmp3', 'id': 2}
-                )
+            # {'name': 'Ехокардіографічне обстеження',
+            # 'template': 'tmp', 'id': 0},
+            {'name': 'Обстеження органів черевної порожнини',
+                'template': 'tmp2', 'id': 1},
+            {'name': 'Обстеження органів сечовидільної системи',
+             'template': 'tmp3', 'id': 2}
+        )
         self.diags = (tk.StringVar(), tk.StringVar(),
                       tk.StringVar(), tk.StringVar(), tk.StringVar())
         self.treeDiag = ttk.Treeview(dataInfo, height=13)
@@ -277,7 +280,7 @@ class Page1(Page):
         self.pg = pg
 
     def switchPage(self):
-        if self.treeDiag.focus() != '' and self.tree.focus() != '' :
+        if self.treeDiag.focus() != '' and self.tree.focus() != '':
             self.pg.lift()
             self.pg.setInfo(self.vars, [self.treeDiag.item(
                 self.treeDiag.focus())['text'], self.treeDiag.item(

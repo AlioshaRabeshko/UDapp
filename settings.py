@@ -3,6 +3,7 @@ from tkinter import ttk
 from page import Page
 import json
 
+
 class Settings(Page):
     def __init__(self, *args, **kwargs):
         Page.__init__(self, *args, **kwargs, bg='mint cream')
@@ -12,26 +13,40 @@ class Settings(Page):
 
         with open('configs/config.json', encoding='utf-8') as json_file:
             data = json.load(json_file)
-            print(data)
 
-            container1 = tk.Frame(self, bg='azure3', pady=5)
-            container1.pack(side='top', pady=3)
-            container1_1 = tk.Frame(container1, bg='azure3', padx=5)
-            container1_1.pack(side='top', pady=3)
-            tk.Label(container1_1, text='Ім\'я лікаря: ', font='Times 14', bg='azure3').pack(side='left')
-            tk.Label(container1_1, text=data['doctorName'], font='Times 14', bg='azure3').pack(side='left')
-            container1_2 = tk.Frame(container1, bg='azure3', padx=20, pady=5)
-            container1_2.pack(side='top', pady=3)
-            var1=tk.StringVar()
-            tk.Label(container1_2, text='Змінити: ', font='Times 14', bg='azure3').pack(side='left')
-            ttk.Entry(container1_2, textvariable=var1, font='Times 14').pack(side='left', padx=5)
-            def tmp1():
-                data['doctorName']=var1.get()
-            ttk.Button(container1_2, text='Зберегти', command=tmp1).pack(side='left')
+        container = tk.Frame(self, bg='azure3', pady=5, padx=10)
+        container.pack(side='top', pady=3)
 
-            container2 = tk.Frame(self, bg='azure3', padx=20, pady=20)
-            container2.pack(side='top', pady=3)
-            var2 = data['deviceName']
-            tk.Label(container2, text='Назва апарату: ', font='Times 14', bg='azure3').pack(side='left')
-            ttk.Entry(container2, textvariable=var2, font='Times 14').pack(side='left')
+        container1 = tk.Frame(container, bg='azure3', pady=5, padx=10)
+        container1.pack(side='top', pady=3)
+        var1 = tk.StringVar()
+        tk.Label(container1, text='Ім\'я лікаря: ',
+                 font='Times 14', bg='azure3').pack(side='left')
+        entr = ttk.Entry(container1, textvariable=var1,
+                         font='Times 14')
+        entr.insert(0, data['doctorName'])
+        entr.pack(side='left', padx=5)
 
+        def tmp1():
+            data['doctorName'] = var1.get()
+            with open('configs/config.json', 'w') as f:
+                f.write(json.dumps(data))
+        ttk.Button(container1, text='Зберегти',
+                   command=tmp1).pack(side='left')
+
+        container2 = tk.Frame(container, bg='azure3', pady=5, padx=10)
+        container2.pack(side='top', pady=3)
+        var2 = tk.StringVar()
+        tk.Label(container2, text='Назва апарату УЗД: ',
+                 font='Times 14', bg='azure3').pack(side='left')
+        entr2 = ttk.Entry(container2, textvariable=var2,
+                          font='Times 14')
+        entr2.insert(0, data['deviceName'])
+        entr2.pack(side='left', padx=5)
+
+        def tmp2():
+            data['deviceName'] = var2.get()
+            with open('configs/config.json', 'w') as f:
+                f.write(json.dumps(data))
+        ttk.Button(container2, text='Зберегти',
+                   command=tmp2).pack(side='left')

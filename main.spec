@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\Ryuzetsu\\UDapp'],
+             pathex=['/home/ryuzetsu/UDapp'],
              binaries=[],
              datas=[],
              hiddenimports=['pkg_resources.py2_warn'],

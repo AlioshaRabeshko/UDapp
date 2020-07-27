@@ -1,10 +1,9 @@
 import tkinter as tk
-from tkinter import ttk, Canvas
-from page import Page
+from tkinter import Canvas
+# from page import Page
 from page1 import Page1
 from settings import Settings
 from diagnosticInput import DiagnosticInput
-
 
 
 class MainView(tk.Frame):
@@ -28,7 +27,7 @@ class MainView(tk.Frame):
         container.pack(side="top", fill="both", expand=True)
 
         self.p1.show()
-    
+
     def openSettings(self):
         self.settings.lift()
 
